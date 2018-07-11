@@ -47,9 +47,6 @@
         padding-right: 5px;
     }
     .badge-danger {
-        background-color: #942921;
-    }
-    .active{
-        color: #942921 !important;
+        background-color: #D22C37;
     }
 </style>

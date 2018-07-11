@@ -15,10 +15,10 @@
     export default {
 
         data: function() {
-          return {
-              note: this.notes.note,
-              timeout: null,
-          }
+            return {
+                note: this.notes.note,
+                timeout: null,
+            }
         },
         props: {
             notes: Object

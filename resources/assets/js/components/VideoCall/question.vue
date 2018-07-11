@@ -54,12 +54,12 @@
             }
         },
         watch: {
-          countdown: function(){
-              this.count = this.countdown;
-              this.startCount();
-              this.showButtons = false;
+            countdown: function(){
+                this.count = this.countdown;
+                this.startCount();
+                this.showButtons = false;
 
-          },
+            },
         },
         props: {
             questions: Array,
@@ -113,8 +113,11 @@
 <style scoped>
     .button {
         margin: 1rem 0;
-        height: 3rem;
-        width: 15rem;
+        height: auto;
+        width: 100%;
+        width: -moz-available;/* WebKit-based browsers will ignore this. */
+        width: -webkit-fill-available;/* Mozilla-based browsers will ignore this. */
+        width: fill-available;
     }
     .visited {
         opacity: 0.65;
@@ -145,16 +148,12 @@
     @media(min-width: 992px){
         .button {
             margin: 1rem 0;
-            height: 4rem;
-            width: 15rem;
             white-space: normal;
         }
     }
     @media(min-width: 1400px){
         .button {
             margin: 1rem 0rem;
-            height: 4rem;
-            width: 17rem;
         }
     }
 </style>

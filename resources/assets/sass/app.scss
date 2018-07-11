@@ -16,7 +16,6 @@
 .navbar-brand span {
   font-family: $font-family-serif;
   position: relative;
-  top: -7px !important;
 }
 
 .navbar-brand small {
@@ -42,6 +41,7 @@ h3 {
 
 body {
   font-size: 12pt;
+  background-color: #f0f0f0;
   //font-family: $font-family-sans-serif;
 }
 
@@ -54,6 +54,7 @@ body {
   -webkit-box-shadow: 0 8px 6px -6px #999;
   -moz-box-shadow: 0 8px 6px -6px #999;
   box-shadow: 0 8px 6px -6px #999;
+  padding: .5rem 1rem;
 }
 
 .wrapper {
@@ -92,6 +93,7 @@ fieldset[disabled] .btn-invert:focus,
 fieldset[disabled] .btn-invert.focus {
   background-color: $sim-heading;
   border-color: $sim-heading;
+  color: white;
 }
 
 .heading{
@@ -103,6 +105,11 @@ fieldset[disabled] .btn-invert.focus {
     margin: 0;
     padding: 8px 10px;
   }
+}
+
+#logo {
+  height: 60px;
+  width: 60px;
 }
 
 .main{
@@ -119,4 +126,8 @@ fieldset[disabled] .btn-invert.focus {
 
 .contents{
   margin: $sim-margin;
+}
+
+.bg-grey {
+  background-color: #4a4a4a;
 }

@@ -14,27 +14,34 @@
                     <span class="characterActive" v-if="activeContacts.includes(person.character_id)">
                             <i class="material-icons activeIcon">fiber_manual_record</i>
                     </span>
+                    <span class="characterInactive" v-else>
+                            <i class="material-icons activeIcon">fiber_manual_record</i>
+                    </span>
+                    <!--<span class="badge badge-pill badge-danger notify" v-if="contactMessages.includes(person.character_id)">
+                        1
+                    </span>-->
                 </div>
-                <div class="characterInfo col-sm-5">
+                <div class="characterInfo col-sm-6">
                     <span class="characterName">{{ person.name }}</span><br>
                     <span class="characterPosition">{{ person.role }}</span>
                 </div>
-                <span id="call" class="col-sm-5">
+                <span id="call" class="col-sm-3">
+
                     <i class="videocam material-icons">videocam</i>
                 </span>
             </div>
         </div>
 
         <character-video
-                         v-else
-                         @alertSuccess="alertSaveSuccess"
-                         @alertFailure="alertSaveFailure"
-                         @showContacts="showContacts"
-                         :clickedCharacter="this.clickedCharacter"
-                         :characters="this.characters"
-                         :calls="this.calls"
-                         :questions="this.questions"
-                         :disabledQuestions="this.disabledQuestions">
+                v-else
+                @alertSuccess="alertSaveSuccess"
+                @alertFailure="alertSaveFailure"
+                @showContacts="showContacts"
+                :clickedCharacter="this.clickedCharacter"
+                :characters="this.characters"
+                :calls="this.calls"
+                :questions="this.questions"
+                :disabledQuestions="this.disabledQuestions">
 
         </character-video>
     </div>
@@ -60,14 +67,23 @@
             characters: Array
         },
         data: function() {
-          return {
-              clickedCharacter: 0
-          }
+            return {
+                clickedCharacter: 0
+            }
         },
         computed: {
             activeContacts: function() {
                 return this.calls.filter((character) => {
-                    if(character.day === this.$store.state.user.current_day){
+                    if(!character.video_message){
+                        return character.character_id;
+                    }
+                }).map((character) => {
+                    return character.character_id;
+                })
+            },
+            contactMessages: function() {
+                return this.calls.filter((character) => {
+                    if(character.video_message){
                         return character.character_id;
                     }
                 }).map((character) => {
@@ -100,6 +116,11 @@
         align-self: center;
         position: relative;
     }
+    .notify {
+        position: relative;
+        margin-left: 30px;
+        bottom: 17px
+    }
     .videocam {
         color: grey;
     }
@@ -109,8 +130,16 @@
     .characterActive{
         color: #57AB58;
         position: relative;
-        margin-left: -16px;
-        bottom: -24px;
+
+        margin-left: 30px;
+        bottom: 14px;
+    }
+    .characterInactive{
+        color: #dc3545;
+        position: relative;
+
+        margin-left: 30px;
+        bottom: 14px;
     }
     .contact-inner{
         padding: 10px;
@@ -129,6 +158,17 @@
         align-self: center;
         font-size: 24px;
     }
+    @media(min-width: 1092px){
+        .notify {
+            margin-left: -16px;
+            bottom: -17px
+        }
+        .characterActive{
+            margin-left: -16px;
+            bottom: -24px;
+        }
+    }
+
 
 
 </style>

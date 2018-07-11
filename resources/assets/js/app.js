@@ -20,14 +20,14 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 Vue.component('left-menu', require('./components/LeftMenu/LeftMenu.vue'));
 //Vue.component('right-menu', require('./components/RightMenu/RightMenu.vue'));
 
-Vue.component('gallery', require('./components/Gallery/Gallery'));
+//Vue.component('gallery', require('./components/Gallery/Gallery'));
 Vue.component('dash', require('./components/Dashboard/dashboard.vue'));
 Vue.component('email', require('./components/Email/Email.vue'));
-Vue.component('gallery', require('./components/Gallery/Gallery.vue'));
+//Vue.component('gallery', require('./components/Gallery/Gallery.vue'));
 Vue.component('videocall', require('./components/VideoCall/videoCall.vue'));
 Vue.component('library', require('./components/Library/library.vue'));
-// Vue.component('chatbot', require('./components/Chatbot/Chatbot.vue'));
-// Vue.component('slackbot', require('./components/Chatbot/Slackbot.vue'));
+Vue.component('chatbot', require('./components/Chatbot/Chatbot.vue'));
+Vue.component('slackbot', require('./components/Chatbot/Slackbot.vue'));
 Vue.component('classes', require('./components/Classes/Classes.vue'));
 Vue.component('editor', require('./components/Library/articleEditor.vue'));
 Vue.component('navigation', require('./components/NavigationLink/navigation.vue'));
@@ -64,7 +64,7 @@ const app = new Vue({
             this.SET_USER();
             this.SET_SIMULATION();
             this.SET_NEW_EMAILS();
-            this.SET_NEW_ARTIFACTS();
+            //this.SET_NEW_ARTIFACTS();
         }).catch(error => {
             console.log( error);
         })

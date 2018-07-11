@@ -48,8 +48,8 @@ Route::group(['middleware'=>['auth', 'student']], function() {
     });
     Route::post( '/resetDay', 'SimulationController@resetDay' );
     Route::post('/getemailnotifications', 'SimulationController@getEmailNotifications');
-    Route::post('/getgallerynotifications', 'SimulationController@getGalleryNotifications');
-    Route::post('/visitedgallery', 'SimulationController@visitedGallery');
+    //Route::post('/getgallerynotifications', 'SimulationController@getGalleryNotifications');
+    //Route::post('/visitedgallery', 'SimulationController@visitedGallery');
 
 
 // Tasks
@@ -77,8 +77,8 @@ Route::group(['middleware'=>['auth', 'student']], function() {
     });
 
 // Gallery
-    Route::get( '/getartifacts', 'GalleryController@getArtifacts' );
-    Route::resource('/gallery', 'GalleryController');
+    //Route::get( '/getartifacts', 'GalleryController@getArtifacts' );
+    //Route::resource('/gallery', 'GalleryController');
 
 // Group
     Route::resource('/group', 'GroupController');

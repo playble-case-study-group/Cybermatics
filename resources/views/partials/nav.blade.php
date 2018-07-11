@@ -1,11 +1,9 @@
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white navbar-default navbar-static-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-grey navbar-default navbar-static-top">
     <!-- Branding Image -->
     <a class="navbar-brand" href="{{ url('/home') }}">
-        <img src="img/logo/red.png" alt="logo">
-        <span>{{ config('app.name', 'Museum of Spain') }}</span>
-        <small>With a sub title</small>
-
+        <img src="img/logo/test-icon2.png" alt="logo" id="logo">
+        <span>{{ config('app.name', 'Cybermatics') }}</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#app-navbar-collapse" aria-controls="app-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -31,9 +29,8 @@
                         :link="'/library'">
                 </navigation>
                 <navigation
-                        :title="'Gallery'"
-                        :link="'/gallery'"
-                        :notifications="$store.state.notifications.newArtifacts">
+                        :title="'Chat'"
+                        :link="'/chat'">
                 </navigation>
                 <navigation
                         :title="'Video Call'"

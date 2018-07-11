@@ -50,12 +50,12 @@
         },
         watch:{
             recording: function(){
-               this.cancel = this.recording;
+                this.cancel = this.recording;
 
-               if(this.recording){
-                   this.leaveMessage();
-               }
-           },
+                if(this.recording){
+                    this.leaveMessage();
+                }
+            },
             clickedCharacter: function() {
                 this.$forceUpdate();
             }
@@ -78,7 +78,8 @@
             },
             handleFailure: function(error){
                 //if they don't have browser support, try a lower compatibility function or fail
-                console.error('Reeeejected!', error);
+                console.error('Reeeejected2!', error);
+
             },
             handleSuccess: function(stream) {
                 const video = document.querySelector('video');
@@ -157,7 +158,7 @@
                             )
                             .then(r => {
                                 appScope.$emit('saveSuccess');
-                                })
+                            })
                             .catch(e => {
                                 appScope.$emit('saveFailure');
                             });

@@ -1,12 +1,14 @@
 <template>
     <div class="container clearfix">
         <div class="people-list" id="people-list">
+            <h2 class="list-title">Online</h2>
             <!--<div class="search">-->
                 <!--<input type="text" placeholder="search"/>-->
                 <!--<i class="fa fa-search"></i>-->
             <!--</div>-->
             <ul class="list">
                 <slack-channel v-for="(channel, key) in channels"
+                               class="pointer"
                             :channel="channel"
                             v-on:click.native="changeChannel(key)"
                             :key="key">
@@ -16,7 +18,7 @@
 
         <div class="chat">
             <div class="chat-header clearfix">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg" alt="avatar"/>
+                <img class="selected-character" :src="channels[current_client_index].img_small" alt="avatar"/>
 
                 <div class="chat-about">
                     <div class="chat-with">{{ channels[current_client_index].name }}</div>
@@ -26,16 +28,17 @@
 
             <div id="chat-history">
                 <ul>
-                  <span v-for="(message, key) in client_messages[current_client_index + 1]">
+                  <span v-for="(message, key) in client_messages[current_channel_id]">
                     <slack-response v-if="!message.type"
                                     :message="message"
-                                    :isLast="key === (client_messages[current_client_index + 1].length - 1)? true: false"
+                                    :isLast="key === (client_messages[current_channel_id].length - 1)? true: false"
                                     v-on:last_msg="scrollChat"
                                     :key="key">
                     </slack-response>
                     <slack-receive v-if="message.type"
+                                   :name="channels[current_client_index].name"
                                    :message="message"
-                                   :isLast="key === (client_messages[current_client_index + 1].length - 1)? true: false"
+                                   :isLast="key === (client_messages[current_channel_id].length - 1)? true: false"
                                    v-on:last_msg="scrollChat"
                                    :key="key">
                     </slack-receive>
@@ -55,7 +58,7 @@
                 <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp;
                 <i class="fa fa-file-image-o"></i>
 
-                <button>Send</button>
+                <button @click="submitMessage">Send</button>
 
             </div> <!-- end chat-message -->
 
@@ -102,13 +105,16 @@
         mounted() {
             // Creates emtpy array for each channel
             this.channels.forEach ( channel => {
-                this.client_messages[channel.id] = [];
+                this.client_messages[channel.channel_id] = [];
             });
+
+            this.current_channel_id = this.channels[0].channel_id;
 
             // Fills channel arrays with messages from msg prop
             this.msgs.forEach ( msg => {
                 this.client_messages[msg.channel_id].push(msg);
             });
+
         },
         data: function () {
             return {
@@ -118,7 +124,7 @@
                 current_channel_id: 1,
                 sendMessage: "",
                 client_messages: {},
-                userName: "Dan Ebeling"
+                userName: ''
             }
         },
         methods: {
@@ -129,7 +135,7 @@
             submitMessage: function () {
 
 //                this.dayContext();
-
+                this.userName = this.$store.state.user.name;
                 this.clients[this.current_client_index].eventRequest("day_" + this.currentDay + "_context").then(response1 => {
                     console.log('context: ', response1)
 
@@ -137,13 +143,15 @@
 
                         console.log(response);
 
-
                         // Disable text area to prevent double input
                         document.getElementById('message-to-send').disabled = "true";
 
+                        let date = new Date;
+                        date = date.toLocaleDateString("en-US");
+
                         let message = {
                             name: this.userName,
-                            time: Date.now(),
+                            time: date,
                             message: this.sendMessage,
                             day: this.$store.getters.CURRENT_DAY,
                             type: 0,
@@ -152,34 +160,35 @@
 
                         this.client_messages[this.current_channel_id].push(message);
 
-                        axios.post('/chat', message).then( response => {/* console.log(response) */});
 
-                        // empty the message each time it sends
-                        this.sendMessage = "";
+                        axios.post('/chat', message).then( res => {/* console.log(response) */
 
-                        if(response.result.fulfillment.messages) {
-                            let payload = response.result.fulfillment.messages.filter(msg => msg.type === 4);
+                            // empty the message each time it sends
+                            this.sendMessage = "";
 
-                            if (payload.length) {
+                            if(response.result.fulfillment.messages) {
+                                //let payload = response.result.fulfillment.messages.filter(msg => msg.type === 4);
+                                let payload = response.result.fulfillment.messages;
+                                if (payload.length) {
 
-                                payload[0].payload.msgs.forEach(msg => {
+                                    payload.forEach(msg => {
 
-                                    let data = {
-                                        day: this.$store.getters.CURRENT_DAY,
-                                        channel_id: this.current_channel_id,
-                                        message: msg.msg,
-                                        character_name: msg.name,
-                                        type: msg.type
-                                    };
+                                        console.log(msg);
+                                        let data = {
+                                            day: this.$store.getters.CURRENT_DAY,
+                                            channel_id: this.current_channel_id,
+                                            message: msg.speech,
+                                            type: 1
+                                        };
 
-                                    axios.post('/chat', data).then( response => { /* console.log(response) */ });
-                                    this.client_messages[this.current_channel_id].push(data)
-                                });
+                                        axios.post('/chat', data).then( response => { /* console.log(response) */ });
+                                        this.client_messages[this.current_channel_id].push(data)
+                                    });
+
+                                }
 
                             }
-
-                        }
-
+                        });
                         // Disable text area to prevent double input
                         document.getElementById('message-to-send').removeAttribute('disabled');
                         document.getElementById('message-to-send').focus();
@@ -187,12 +196,6 @@
 
                     });
                 });
-
-
-
-
-
-
             },
             scrollChat: function () {
                 let chatHist = document.getElementById('chat-history');
@@ -201,7 +204,7 @@
             changeChannel: function (channel_index) {
                 this.scrollChat();
                 this.current_client_index = channel_index;
-                this.current_channel_id = this.channels[this.current_client_index].id;
+                this.current_channel_id = this.channels[this.current_client_index].channel_id;
             }
         }
     }
@@ -223,17 +226,20 @@
         list-style: none;
     }
 
-    .container {
-        /*margin: 0 auto;*/
-        /*width: 750px;*/
-        background: #444753;
-        /*border-radius: 5px;*/
+    .pointer {
+        cursor: pointer;
+    }
+
+
+    .list-title {
+        padding-left: 20px;
     }
 
     .people-list {
         width: 260px;
         float: left;
-        color: white;
+        color: #4a4a4a;
+        margin-top: 35px;
 
         .search {
             padding: 20px;
@@ -283,9 +289,9 @@
     }
 
     .chat {
-        width: 590px;
+        width: 650px;
         float: left;
-        background: #F2F5F8;
+        background: #fff;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
 
@@ -297,6 +303,8 @@
 
             img {
                 float: left;
+                border-radius: 50%;
+                border: 2px solid $green;
             }
 
             .chat-about {
@@ -323,10 +331,10 @@
         }
 
         #chat-history {
-            padding: 30px 30px 20px;
+            padding: 0px 20px;
             border-bottom: 2px solid white;
             overflow-y: scroll;
-            height: 575px;
+            height: 675px;
 
             .message-data {
                 margin-bottom: 10px;
@@ -339,11 +347,11 @@
 
             .message {
                 color: white;
-                padding: 18px 20px;
+                padding: 15px 20px;
                 line-height: 26px;
                 font-size: 16px;
                 border-radius: 1px;
-                margin-bottom: 30px;
+                margin-bottom: 15px;
                 width: 90%;
                 position: relative;
 
@@ -382,11 +390,11 @@
 
             textarea {
                 width: 100%;
-                border: none;
+                border: 1px solid #BFBFBF;
                 padding: 10px 20px;
                 font: 14px/22px "Lato", Arial, sans-serif;
                 margin-bottom: 10px;
-                border-radius: 1px;
+                border-radius: 6px;
                 resize: none;
 
             }

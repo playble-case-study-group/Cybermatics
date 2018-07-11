@@ -17,12 +17,16 @@ class ChatController extends Controller
     public function index()
     {
         $chats = DB::table('chats')
-            ->join('users', 'users.id', '=', 'chat.user_id')
-            ->select('users.name', 'chat.channel_id', 'chat.character_name', 'chat.message', 'chat.created_at', 'chat.type')
-            ->where('chat.user_id', Auth::id())
+            ->join('users', 'users.user_id', '=', 'chats.user_id')
+            ->select('users.name', 'chats.channel_id', 'chats.message', 'chats.created_at', 'chats.type')
+            ->where('chats.user_id', Auth::id())
+            ->where('day', Auth::user()->current_day)
             ->get();
 
-        $channels = DB::table('channels')->get();
+        $channels = DB::table('channels')
+            ->join('characters', 'characters.character_id', '=', 'channels.character_id')
+            ->where('day', Auth::user()->current_day)
+            ->get();
 
         return view('chatbot', compact('chats', 'channels'));
     }
@@ -60,7 +64,6 @@ class ChatController extends Controller
             DB::table('chats')->insert([
                 'user_id' => Auth::id(),
                 'day' => $request->day,
-                'character_name' => $request->character_name,
                 'message' => $request->message,
                 'created_at' => Carbon::now(),
                 'type' => $request->type,

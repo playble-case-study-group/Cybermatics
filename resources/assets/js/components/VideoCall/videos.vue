@@ -7,7 +7,7 @@
             </video>
 
             <video v-if="!videoMessageInterface" id="personal_video" poster="/img/videocall/video-placeholder.jpg" autoplay>
-                <source src="/video/record.mp4" type="video/mp4">
+                <source src="" type="video/mp4">
             </video>
 
             <!--video recording component, hidden until click on inactive character-->
@@ -94,7 +94,7 @@
         mounted() {
             this.startSelfVideo();
             this.startAudio();
-            this.loadCallVideo(this.clickedCharacter);
+            this.playIntroVideo();
         },
         updated() {
             if(this.videoMessageInterface == false){
@@ -104,17 +104,16 @@
         watch: {
             currentVideo: function () {
                 if(!this.videoMessageInterface) {
+                    document.getElementById('call_video').src = this.currentVideo.video_url;
                     document.getElementById('call_video').load();
-                    this.callIconToggleStatus = "call";
                 }
             },
             currentQuestion: function () {
                 //if statement needed to avoid a change when currentQuestion changes to null
-                if(!this.videoMessageInterface) {
+
+                if(!this.videoMessageInterface && !this.currentVideo.video_message && this.currentQuestion) {
                     document.getElementById('call_video').currentTime = (parseInt(this.currentQuestion.start_time) + 0.51);
                     document.getElementById('call_video').play();
-                    this.callIconToggleStatus = "call_end";
-
                     let appScope = this;
                     let paused = false;
                     document.getElementById('call_video').addEventListener("timeupdate", function () {
@@ -128,6 +127,15 @@
                             }
                         }
                     });
+                } else if(this.currentVideo.video_message) {
+                    let appScope = this;
+                    document.getElementById('call_video').play();
+                    document.getElementById('call_video').onended = function(e) {
+                        appScope.revertToContactsPage();
+                    };
+                } else {
+                    document.getElementById('call_video').play();
+
                 }
             },
             videoMessageInterface: function(){
@@ -168,8 +176,19 @@
                 });
                 this.startSelfVideo();
             },
+            playIntroVideo: function() {
+                let video = document.getElementById('call_video');
+                video.src = '/video/Ringing.mp4';
+                video.play();
+
+                let appScope = this;
+                video.onended = function(e) {
+                    appScope.loadCallVideo(appScope.clickedCharacter);
+                };
+
+            },
             loadCallVideo: function (person_id) {
-                this.clickedCharacter = person_id;
+                //this.clickedCharacter = person_id;
                 //check if the contact clicked on is active
                 let activeCall = this.calls.find((call) => {
                     if (call.character_id === person_id) {
@@ -185,6 +204,7 @@
                             return question;
                         }
                     })
+
                     this.currentVideo = activeCall;
                     this.currentQuestion = this.currentQuestions.find((question) => {
                         if (question.first_question) {
@@ -435,6 +455,7 @@
 
                     //set canvas background color and add animation
                     canvasCtx.fillStyle = '#4a4a4a';
+
                     canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
 
                     //define the width of audio bar display

@@ -8,8 +8,8 @@
     </defs>
     <g id="CHECK/checked-small" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Rectangle-6">
-            <use fill="#4A4A4A" fill-rule="evenodd" xlink:href="#path-1"></use>
-            <rect stroke="#4A4A4A" stroke-width="1" x="0.5" y="0.5" width="7" height="7"></rect>
+            <use fill="#D22C37" fill-rule="evenodd" xlink:href="#path-1"></use>
+            <rect stroke="#D22C37" stroke-width="1" x="0.5" y="0.5" width="7" height="7"></rect>
         </g>
     </g>
 </svg>

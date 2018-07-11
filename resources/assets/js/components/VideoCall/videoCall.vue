@@ -17,18 +17,18 @@
 
 
         <div class="row">
-                <notes id="notesParent" class="col-sm-11 col-lg-3"
-                       :notes="this.notes">
-                </notes>
-                <contacts class="col-sm-11 col-lg-8"
-                                 @alertSuccess="alertSaveSuccess"
-                                 @alertFailure="alertSaveFailure"
-                                 :characters="this.contacts"
-                                 :calls="this.calls"
-                                 :questions="this.questions"
-                                 :disabledQuestions="this.disabled">
+            <notes id="notesParent" class="col-sm-11 col-lg-3"
+                   :notes="this.notes">
+            </notes>
+            <contacts class="col-sm-11 col-lg-8"
+                      @alertSuccess="alertSaveSuccess"
+                      @alertFailure="alertSaveFailure"
+                      :characters="this.contacts"
+                      :calls="this.calls"
+                      :questions="this.questions"
+                      :disabledQuestions="this.disabled">
 
-                </contacts>
+            </contacts>
         </div>
     </div>
 </template>
@@ -60,8 +60,8 @@
                 $('#submitSuccess').removeClass("hidden");
                 $('#submitSuccess').alert();
                 setTimeout(function(){
-                        $('#submitSuccess').addClass("hidden");
-                    }, 2500);
+                    $('#submitSuccess').addClass("hidden");
+                }, 2500);
 
             },
             alertSaveFailure: function() {
@@ -69,9 +69,9 @@
                 $('#submitFailure').show();
                 $('#submitFailure').alert();
                 setTimeout( function()
-                    {
-                        $('#submitFailure').hide();
-                    }, 2500);
+                {
+                    $('#submitFailure').hide();
+                }, 2500);
 
             }
         }

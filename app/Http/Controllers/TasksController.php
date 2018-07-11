@@ -17,7 +17,6 @@ class TasksController extends Controller
     public function index()
     {
         $tasks = DB::table('tasks')
-            ->join('task_type', 'tasks.task_type_id', '=', 'task_type.task_type_id')
             ->get();
 
 
