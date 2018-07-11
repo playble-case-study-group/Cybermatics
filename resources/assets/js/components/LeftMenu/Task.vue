@@ -3,7 +3,7 @@
         <label>
             <span class="checkmark unchecked" v-if="!task.complete" v-on:click="TOGGLE_TASK(task.task_id)"></span>
             <span class="checkmark checked" v-if="task.complete" v-on:click="TOGGLE_TASK(task.task_id)"></span>
-            <span class="navigation" v-on:click="navigateToComponent(task)">{{ task.title }}</span>
+            <h5 class="navigation" v-on:click="navigateToComponent(task)">{{ task.title }}</h5>
             <div class="task-description">
                 {{ task.description }}
             </div>
@@ -43,6 +43,10 @@
         margin-bottom: 12px;
     }
 
+    h5 {
+        font-size: 12pt;
+     }
+
     label {
         display: block;
         position: relative;
@@ -74,10 +78,11 @@
 
     .navigation {
         cursor: pointer;
-        font-family: "Raleway", sans-serif;
+        font-family: "Lato", sans-serif;
     }
     .task-description {
-        font-size: 14px;
+        font-size: 13px;
+        font-weight: 100;
         color: grey;
     }
 

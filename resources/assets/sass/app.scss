@@ -16,6 +16,9 @@
 .navbar-brand span {
   font-family: $font-family-serif;
   position: relative;
+  letter-spacing: 3px;
+  font-size: 15pt;
+  font-weight: 200;
 }
 
 .navbar-brand small {
@@ -26,11 +29,11 @@
 
 h1  {
   font-size: 18pt;
-  font-weight: bold;
 }
 
 h2 {
   font-size: 16pt;
+
   //font-family: $font-family-sans-serif;
 }
 
@@ -39,10 +42,14 @@ h3 {
   //font-family: $font-family-sans-serif;
 }
 
-body {
+body, textarea {
   font-size: 12pt;
+  font-weight: 100;
+  //font-family: $font-family-serif;
+}
+
+#app {
   background-color: #f0f0f0;
-  //font-family: $font-family-sans-serif;
 }
 
 .material-icons {

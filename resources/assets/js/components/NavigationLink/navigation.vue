@@ -39,12 +39,15 @@
 <style scoped>
     .nav-link {
         text-transform: uppercase;
-        font-family: "Raleway", sans-serif;
+        font-family: "Lato", sans-serif;
+    }
+    .nav-item {
+        font-weight: 200;
     }
     .nav-icon {
         position: relative;
         top: -2px;
-        padding-right: 5px;
+        padding-right: 2px;
     }
     .badge-danger {
         background-color: #D22C37;
