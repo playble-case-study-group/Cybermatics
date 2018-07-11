@@ -119,7 +119,6 @@
     }
 
     #libraryMenu {
-        height: 100vh;
         padding-top: 40px;
         padding-left: 40px;
         box-shadow: inset -7px 0 9px -10px rgba(0,0,0,0.4);

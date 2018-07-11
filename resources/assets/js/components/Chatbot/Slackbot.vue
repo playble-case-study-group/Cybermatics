@@ -213,8 +213,8 @@
 <style lang="scss">
     @import url(https://fonts.googleapis.com/css?family=Lato:400,700);
 
-    $green: #86BB71;
-    $blue: #94C2ED;
+    $green: #596d6f;
+    $blue: #8baaad;
     $orange: #E38968;
     $gray: #92959E;
 
