@@ -256,7 +256,7 @@
         height: 60rem;
         overflow-y: scroll;
     }
-    h2.heading {
+    .heading > h2 {
         margin-top: 6px;
     }
     .row{
