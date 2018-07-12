@@ -17,7 +17,7 @@
         <div class="main">
             <div class="row">
                 <div role="banner" class="heading flex-header col-sm-12">
-                    <h1>Messages</h1>
+                    <h2>Messages</h2>
                     <div id="mySidenav" class="sidenav">
                         <a href="javascript:void(0)" class="closebtn" @click="closeNav">&times;</a>
                         <button class="btn btn-success compose" @click="composeModal">Compose</button>
@@ -255,6 +255,9 @@
     .main{
         height: 60rem;
         overflow-y: scroll;
+    }
+    h2.heading {
+        margin-top: 6px;
     }
     .row{
         margin: 0px;

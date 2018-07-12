@@ -21,7 +21,7 @@
                 <img class="selected-character" :src="channels[current_client_index].img_small" alt="avatar"/>
 
                 <div class="chat-about">
-                    <div class="chat-with">{{ channels[current_client_index].name }}</div>
+                    <h5 class="chat-with">{{ channels[current_client_index].name }}</h5>
                 </div>
                 <i class="fa fa-star"></i>
             </div> <!-- end chat-header -->
@@ -299,7 +299,7 @@
 
         .chat-header {
             padding: 20px;
-            border-bottom: 2px solid white;
+            border-bottom: 1px solid #f1f1f1;
 
             img {
                 float: left;
@@ -349,7 +349,9 @@
                 color: white;
                 padding: 15px 20px;
                 line-height: 26px;
-                font-size: 16px;
+                font-size: 14px;
+                font-weight: 300;
+                letter-spacing: 0.5px;
                 border-radius: 1px;
                 margin-bottom: 15px;
                 width: 90%;
@@ -387,12 +389,13 @@
 
         .chat-message {
             padding: 20px;
+            border-top: 1px solid #f1f1f1;
 
             textarea {
                 width: 100%;
                 border: 1px solid #BFBFBF;
                 padding: 10px 20px;
-                font: 14px/22px "Lato", Arial, sans-serif;
+                font: 14px/22px "Nunito", Arial, sans-serif;
                 margin-bottom: 10px;
                 border-radius: 6px;
                 resize: none;

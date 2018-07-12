@@ -4,7 +4,7 @@
         <div class="about">
             <div class="name">{{ channel.name }}</div>
             <div class="status">
-                <i class="fa fa-circle online"></i> {{ channel.status }}
+                {{ channel.role }}
             </div>
         </div>
     </li>
@@ -26,7 +26,11 @@
     $blue: #94C2ED;
 
     img {
+        margin-top: 7px;
         border-radius: 50%;
         border: 2px solid $blue;
+    }
+    .name {
+
     }
 </style>
