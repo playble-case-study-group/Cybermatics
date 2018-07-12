@@ -1,0 +1,20 @@
+{
+  "name": "resources",
+  "homepage": "https://github.com/playble-case-study-group/Cybermatics",
+  "authors": [
+    "Matalyn Talbot <matalyn.nicole@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "^3.0.2"
+  }
+}

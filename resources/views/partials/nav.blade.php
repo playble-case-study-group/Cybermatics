@@ -33,8 +33,8 @@
                         :link="'/chat'">
                 </navigation>
                 <navigation
-                        :title="'Video Call'"
-                        :link="'/videocall'">
+                        :title="'Terminal'"
+                        :link="'/terminal'">
                 </navigation>
                 <navigation
                         :title="'Email'"

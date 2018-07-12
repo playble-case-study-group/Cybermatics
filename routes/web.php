@@ -85,6 +85,8 @@ Route::group(['middleware'=>['auth', 'student']], function() {
     Route::post('/addToGroup', 'GroupController@addToGroup');
     Route::post('removeFromGroup', 'GroupController@removeFromGroup');
 
+// Terminal
+    Route::get('/terminal','TerminalController@index');
 
 // Dash
     Route::get('/dashboard', 'DashController@loadDash');
