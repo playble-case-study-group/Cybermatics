@@ -18,7 +18,7 @@ class ChatController extends Controller
     {
         $chats = DB::table('chats')
             ->join('users', 'users.user_id', '=', 'chats.user_id')
-            ->select('users.name', 'chats.channel_id', 'chats.message', 'chats.created_at', 'chats.type')
+            ->select('users.name', 'chats.channel_id', 'chats.message', 'chats.created_at', 'chats.type', 'chats.from')
             ->where('chats.user_id', Auth::id())
             ->where('day', Auth::user()->current_day)
             ->get();
@@ -27,6 +27,12 @@ class ChatController extends Controller
             ->join('characters', 'characters.character_id', '=', 'channels.character_id')
             ->where('day', Auth::user()->current_day)
             ->get();
+
+        $group = DB::table('channels')
+            ->where('character_id', '=', 0)
+            ->first();
+
+        $channels->push($group);
 
         return view('chatbot', compact('chats', 'channels'));
     }
@@ -57,7 +63,8 @@ class ChatController extends Controller
                 'message' => $request->message,
                 'created_at' => Carbon::now(),
                 'type' => $request->type,
-                'channel_id' => $request->channel_id
+                'channel_id' => $request->channel_id,
+                'from' => Auth::user()->name
             ]);
 
         } else {
@@ -67,7 +74,8 @@ class ChatController extends Controller
                 'message' => $request->message,
                 'created_at' => Carbon::now(),
                 'type' => $request->type,
-                'channel_id' => $request->channel_id
+                'channel_id' => $request->channel_id,
+                'from' => $request->from
             ]);
         }
 

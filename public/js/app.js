@@ -79329,6 +79329,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 // https://codepen.io/drehimself/pen/KdXwxR
 
@@ -79386,7 +79387,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             current_channel_id: 1,
             sendMessage: "",
             client_messages: {},
-            userName: ''
+            userName: '',
+            defaultName: 'Kimberly Smitherton'
         };
     },
     methods: {
@@ -79434,20 +79436,51 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                         if (response.result.fulfillment.messages) {
                             //let payload = response.result.fulfillment.messages.filter(msg => msg.type === 4);
                             var payload = response.result.fulfillment.messages;
+                            console.log(payload);
+
                             if (payload.length) {
 
                                 payload.forEach(function (msg) {
 
-                                    console.log(msg);
-                                    var data = {
-                                        day: _this3.$store.getters.CURRENT_DAY,
-                                        channel_id: _this3.current_channel_id,
-                                        message: msg.speech,
-                                        type: 1
-                                    };
+                                    if (msg.type == 4) {
+                                        var custom = msg.payload.msgs;
+                                        console.log(custom);
 
-                                    axios.post('/chat', data).then(function (response) {/* console.log(response) */});
-                                    _this3.client_messages[_this3.current_channel_id].push(data);
+                                        custom.forEach(function (single) {
+                                            console.log(single);
+                                            var data = {
+                                                day: _this3.$store.getters.CURRENT_DAY,
+                                                channel_id: _this3.current_channel_id,
+                                                message: single.msg,
+                                                type: 1,
+                                                from: single.name
+                                            };
+
+                                            axios.post('/chat', data).then(function (response) {/* console.log(response) */});
+                                            _this3.client_messages[_this3.current_channel_id].push(data);
+                                        });
+                                    } else {
+                                        console.log(msg);
+                                        if (msg.speech) {
+                                            var saved_name = '';
+                                            if (_this3.channels[_this3.current_client_index].character_id != 0) {
+                                                saved_name = _this3.channels[_this3.current_client_index].name;
+                                            } else {
+                                                saved_name = _this3.defaultName;
+                                            }
+                                            var data = {
+                                                day: _this3.$store.getters.CURRENT_DAY,
+                                                channel_id: _this3.current_channel_id,
+                                                message: msg.speech,
+                                                type: 1,
+                                                from: saved_name
+                                            };
+
+                                            axios.post('/chat', data).then(function (response) {/* console.log(response) */
+                                            });
+                                            _this3.client_messages[_this3.current_channel_id].push(data);
+                                        }
+                                    }
                                 });
                             }
                         }
@@ -79464,6 +79497,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         },
         changeChannel: function changeChannel(channel_index) {
             this.scrollChat();
+            console.log(channel_index);
             this.current_client_index = channel_index;
             this.current_channel_id = this.channels[this.current_client_index].channel_id;
         }
@@ -79761,6 +79795,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -79769,7 +79804,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.lastChatMessage();
     },
 
-    props: ['name', 'message', 'isLast'],
+    props: ['name', 'message', 'isLast', 'defaultName'],
     methods: {
         lastChatMessage: function lastChatMessage() {
             if (this.isLast) {
@@ -79789,10 +79824,17 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("li", [
     _c("div", { staticClass: "message-data" }, [
-      _c("span", { staticClass: "message-data-name" }, [
-        _c("i", { staticClass: "fa fa-circle online" }),
-        _vm._v(" " + _vm._s(_vm.name))
-      ]),
+      _vm.message.from
+        ? _c("span", { staticClass: "message-data-name" }, [
+            _c("i", { staticClass: "fa fa-circle online" }),
+            _vm._v(" " + _vm._s(_vm.message.from))
+          ])
+        : _vm.name == "Group Chat"
+          ? _c("span", { staticClass: "message-data-name" }, [
+              _c("i", { staticClass: "fa fa-circle online" }),
+              _vm._v(" " + _vm._s(_vm.defaultName) + " ")
+            ])
+          : _vm._e(),
       _vm._v(" "),
       _c("span", { staticClass: "message-data-time" }, [
         _vm._v(_vm._s(_vm.message.time))
@@ -79900,7 +79942,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\nimg[data-v-34d85b4a] {\n  margin-top: 7px;\n  border-radius: 50%;\n  border: 2px solid #94C2ED;\n}\n", ""]);
+exports.push([module.i, "\nimg[data-v-34d85b4a] {\n  margin-top: 7px;\n  border-radius: 50%;\n  border: 2px solid #94C2ED;\n}\n.group[data-v-34d85b4a] {\n  background-color: white;\n}\n", ""]);
 
 // exports
 
@@ -79911,6 +79953,14 @@ exports.push([module.i, "\nimg[data-v-34d85b4a] {\n  margin-top: 7px;\n  border-
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -79942,15 +79992,36 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("li", { staticClass: "clearfix" }, [
-    _c("img", { attrs: { src: _vm.channel.img_small, alt: "avatar" } }),
-    _vm._v(" "),
-    _c("div", { staticClass: "about" }, [
-      _c("div", { staticClass: "name" }, [_vm._v(_vm._s(_vm.channel.name))]),
-      _vm._v(" "),
-      _c("div", { staticClass: "status" }, [
-        _vm._v("\n            " + _vm._s(_vm.channel.role) + "\n        ")
-      ])
-    ])
+    _vm.channel.img_small
+      ? _c("div", [
+          _c("img", { attrs: { src: _vm.channel.img_small, alt: "avatar" } }),
+          _vm._v(" "),
+          _c("div", { staticClass: "about" }, [
+            _c("div", { staticClass: "name" }, [
+              _vm._v(_vm._s(_vm.channel.name))
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "status" }, [
+              _vm._v(
+                "\n                " +
+                  _vm._s(_vm.channel.role) +
+                  "\n            "
+              )
+            ])
+          ])
+        ])
+      : _c("div", [
+          _c("img", {
+            staticClass: "group",
+            attrs: { src: "img/characters/group.png", alt: "avatar" }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "about" }, [
+            _c("div", { staticClass: "name" }, [
+              _vm._v(_vm._s(_vm.channel.name))
+            ])
+          ])
+        ])
   ])
 }
 var staticRenderFns = []
@@ -79995,13 +80066,18 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "chat" }, [
       _c("div", { staticClass: "chat-header clearfix" }, [
-        _c("img", {
-          staticClass: "selected-character",
-          attrs: {
-            src: _vm.channels[_vm.current_client_index].img_small,
-            alt: "avatar"
-          }
-        }),
+        _vm.channels[_vm.current_client_index].character_id != 0
+          ? _c("img", {
+              staticClass: "selected-character",
+              attrs: {
+                src: _vm.channels[_vm.current_client_index].img_small,
+                alt: "avatar"
+              }
+            })
+          : _c("img", {
+              staticClass: "selected-character",
+              attrs: { src: "img/characters/group.png", alt: "avatar" }
+            }),
         _vm._v(" "),
         _c("div", { staticClass: "chat-about" }, [
           _c("h5", { staticClass: "chat-with" }, [
@@ -80043,6 +80119,7 @@ var render = function() {
                       attrs: {
                         name: _vm.channels[_vm.current_client_index].name,
                         message: message,
+                        defaultName: _vm.defaultName,
                         isLast:
                           key ===
                           _vm.client_messages[_vm.current_channel_id].length - 1

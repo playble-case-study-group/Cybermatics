@@ -1,10 +1,18 @@
 <template>
     <li class="clearfix">
-        <img :src="channel.img_small" alt="avatar" />
-        <div class="about">
-            <div class="name">{{ channel.name }}</div>
-            <div class="status">
-                {{ channel.role }}
+        <div v-if="channel.img_small">
+            <img :src="channel.img_small" alt="avatar" />
+            <div class="about">
+                <div class="name">{{ channel.name }}</div>
+                <div class="status">
+                    {{ channel.role }}
+                </div>
+            </div>
+        </div>
+        <div v-else>
+            <img class="group" src="img/characters/group.png" alt="avatar" />
+            <div class="about">
+                <div class="name">{{ channel.name }}</div>
             </div>
         </div>
     </li>
@@ -30,7 +38,7 @@
         border-radius: 50%;
         border: 2px solid $blue;
     }
-    .name {
-
+    .group {
+        background-color: white;
     }
 </style>
