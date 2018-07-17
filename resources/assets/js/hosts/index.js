@@ -3,4 +3,4 @@ const hosts = {
   'riptech.io': require('./riptech')
 }
 
-module.exports = hosts
+module.exports.hosts = hosts;
