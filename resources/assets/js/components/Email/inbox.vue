@@ -272,6 +272,7 @@
     }
     .greyText {
         color: grey;
+        font-weight: 300;
     }
     .read {
         background-color: #f5f8fa;

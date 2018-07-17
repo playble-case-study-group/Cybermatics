@@ -81,8 +81,8 @@
         font-family: "Lato", sans-serif;
     }
     .task-description {
-        font-size: 13px;
-        font-weight: 100;
+        font-size: 14.5px;
+        font-weight: 200;
         color: grey;
     }
 

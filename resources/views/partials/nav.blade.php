@@ -41,7 +41,7 @@
                         :link="'/email'"
                         :notifications="$store.state.notifications.newEmails">
                 </navigation>
-                <li class="nav-item dropdown" style="text-transform: uppercase !important; font-family: 'Lato', sans-serif; font-weight: 200;">
+                <li class="nav-item dropdown" style="text-transform: uppercase !important; font-family: 'Lato', sans-serif; font-weight: 200; font-size: 11.5pt;">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                         {{ Auth::user()->name }} <span class="caret"></span>
                     </a>

@@ -66298,7 +66298,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\nli[data-v-70c68067] {\n  margin-top: 10px;\n  margin-bottom: 12px;\n}\nh5[data-v-70c68067] {\n  font-size: 12pt;\n}\nlabel[data-v-70c68067] {\n  display: block;\n  position: relative;\n  padding-left: 28px;\n  margin-top: 11px;\n  margin-bottom: 12px;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n\n/* Hide the browser's default checkbox */\nlabel input[data-v-70c68067] {\n  display: none;\n}\n\n/* Create a custom checkbox */\n.checkmark[data-v-70c68067] {\n  position: absolute;\n  cursor: pointer;\n  top: 4px;\n  left: 0;\n  height: 16px;\n  width: 16px;\n  background-color: #eee;\n  border: 1px solid #4A4A4A;\n}\n.navigation[data-v-70c68067] {\n  cursor: pointer;\n  font-family: \"Lato\", sans-serif;\n}\n.task-description[data-v-70c68067] {\n  font-size: 13px;\n  font-weight: 100;\n  color: grey;\n}\n\n/* On mouse-over, add a grey background color */\n.checkmark[data-v-70c68067]:hover {\n  background-color: #ccc;\n}\n\n/* When the checkbox is checked, add a blue background */\n.checked[data-v-70c68067] {\n  background-color: #A7BBC2;\n  background: url(\"/img/icon-check.svg\") no-repeat center center;\n}\n\n/* Create the checkmark/indicator (hidden when not checked) */\n.checkmark[data-v-70c68067]:after {\n  content: \"\";\n  position: absolute;\n  display: none;\n}\n\n/* Show the checkmark when checked */\n.checked ~ .checkmark[data-v-70c68067]:after {\n  display: block;\n}\n\n/* Style the checkmark/indicator */\n/*label .checkmark:after {*/\n/*left: 9px;*/\n/*top: 5px;*/\n/*width: 5px;*/\n/*height: 10px;*/\n/*border: solid white;*/\n/*border-width: 0 3px 3px 0;*/\n/*-webkit-transform: rotate(45deg);*/\n/*-ms-transform: rotate(45deg);*/\n/*transform: rotate(45deg);*/\n/*}*/\n", ""]);
+exports.push([module.i, "\nli[data-v-70c68067] {\n  margin-top: 10px;\n  margin-bottom: 12px;\n}\nh5[data-v-70c68067] {\n  font-size: 12pt;\n}\nlabel[data-v-70c68067] {\n  display: block;\n  position: relative;\n  padding-left: 28px;\n  margin-top: 11px;\n  margin-bottom: 12px;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n\n/* Hide the browser's default checkbox */\nlabel input[data-v-70c68067] {\n  display: none;\n}\n\n/* Create a custom checkbox */\n.checkmark[data-v-70c68067] {\n  position: absolute;\n  cursor: pointer;\n  top: 4px;\n  left: 0;\n  height: 16px;\n  width: 16px;\n  background-color: #eee;\n  border: 1px solid #4A4A4A;\n}\n.navigation[data-v-70c68067] {\n  cursor: pointer;\n  font-family: \"Lato\", sans-serif;\n}\n.task-description[data-v-70c68067] {\n  font-size: 14.5px;\n  font-weight: 200;\n  color: grey;\n}\n\n/* On mouse-over, add a grey background color */\n.checkmark[data-v-70c68067]:hover {\n  background-color: #ccc;\n}\n\n/* When the checkbox is checked, add a blue background */\n.checked[data-v-70c68067] {\n  background-color: #A7BBC2;\n  background: url(\"/img/icon-check.svg\") no-repeat center center;\n}\n\n/* Create the checkmark/indicator (hidden when not checked) */\n.checkmark[data-v-70c68067]:after {\n  content: \"\";\n  position: absolute;\n  display: none;\n}\n\n/* Show the checkmark when checked */\n.checked ~ .checkmark[data-v-70c68067]:after {\n  display: block;\n}\n\n/* Style the checkmark/indicator */\n/*label .checkmark:after {*/\n/*left: 9px;*/\n/*top: 5px;*/\n/*width: 5px;*/\n/*height: 10px;*/\n/*border: solid white;*/\n/*border-width: 0 3px 3px 0;*/\n/*-webkit-transform: rotate(45deg);*/\n/*-ms-transform: rotate(45deg);*/\n/*transform: rotate(45deg);*/\n/*}*/\n", ""]);
 
 // exports
 
@@ -67099,7 +67099,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\nul[data-v-52d1ee62] {\n  padding-left: 0;\n  list-style: none;\n  cursor: pointer;\n  margin-top: 20px;\n}\nli[data-v-52d1ee62] {\n  height: 40px;\n  margin-left: -10px;\n  margin-right: -10px;\n  padding: 10px 12px;\n}\n.main[data-v-52d1ee62] {\n  height: 60rem;\n  overflow-y: scroll;\n}\n.row[data-v-52d1ee62] {\n  margin: 0px;\n}\n.hidden[data-v-52d1ee62] {\n  visibility: hidden;\n}\n.emailList[data-v-52d1ee62] {\n  margin-top: 20px;\n}\n.truncate[data-v-52d1ee62] {\n  max-width: 115px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.compose[data-v-52d1ee62] {\n  margin: 20px;\n}\n#toBody[data-v-52d1ee62] {\n  height: 30rem;\n  resize: none;\n}\n#toSubject[data-v-52d1ee62] {\n  width: 80%;\n  border-radius: 4px;\n  border-width: 1px;\n  margin-left: 14px;\n}\n.email-body[data-v-52d1ee62] {\n  margin: 30px 0 40px;\n}\n#composeModal > .modal-dialog > .modal-content[data-v-52d1ee62] {\n  height: 44rem;\n  width: 35rem;\n}\n#readModal > .modal-dialog > .modal-content[data-v-52d1ee62] {\n  width: 35rem;\n}\n.modal-body[data-v-52d1ee62] {\n  height: 80%;\n}\n.modal-title[data-v-52d1ee62] {\n  margin: -9px 0;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n}\n.keyline[data-v-52d1ee62] {\n  border-left: solid 4px #636b6f;\n  padding-left: 20px;\n}\n.keyline-sent[data-v-52d1ee62] {\n  border-color: white;\n}\n.keyline-inbox[data-v-52d1ee62] {\n  border-color: #636b6f;\n}\n.sidebar[data-v-52d1ee62] {\n  display: none;\n}\n.toggle[data-v-52d1ee62] {\n  margin: 20px;\n  cursor: pointer;\n}\n.flex-header[data-v-52d1ee62] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n.mobile-menu[data-v-52d1ee62] {\n  font-size: 26px;\n  color: white;\n}\n.close[data-v-52d1ee62] {\n  color: #fff;\n  line-height: 0;\n  margin-top: -15px;\n}\n\n/* The side navigation menu */\n.sidenav[data-v-52d1ee62] {\n  height: 100%;\n  /* 100% Full-height */\n  width: 0;\n  /* 0 width - change this with JavaScript */\n  height: 60rem;\n  position: absolute;\n  /* Stay in place */\n  z-index: 1;\n  /* Stay on top */\n  right: 0;\n  background-color: #4a4a4a;\n  overflow-x: hidden;\n  /* Disable horizontal scroll */\n  padding-top: 60px;\n  /* Place content 60px from the top */\n  -webkit-transition: 0.5s;\n  transition: 0.5s;\n  /* 0.5 second transition effect to slide in the sidenav */\n}\n\n/* The navigation menu links */\n.sidenav a[data-v-52d1ee62] {\n  padding: 8px 8px 8px 32px;\n  text-decoration: none;\n  font-size: 25px;\n  color: #818181;\n  display: block;\n  -webkit-transition: 0.3s;\n  transition: 0.3s;\n}\n\n/* When you mouse over the navigation links, change their color */\n.sidenav a[data-v-52d1ee62]:hover {\n  color: #f1f1f1;\n}\n\n/* Position and style the close button (top right corner) */\n.sidenav .closebtn[data-v-52d1ee62] {\n  position: absolute;\n  top: 0;\n  right: 25px;\n  font-size: 36px;\n  margin-left: 50px;\n}\n\n/* Style page content - use this if you want to push the page content to the right when you open the side navigation */\n.content[data-v-52d1ee62] {\n  -webkit-transition: margin-left .5s;\n  transition: margin-left .5s;\n  padding: 20px;\n}\n\n/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */\n@media screen and (max-height: 450px) {\n.sidenav[data-v-52d1ee62] {\n    padding-top: 15px;\n}\n.sidenav a[data-v-52d1ee62] {\n    font-size: 18px;\n}\n}\n@media (min-width: 1024px) {\n.truncate[data-v-52d1ee62] {\n    max-width: 23rem;\n}\n}\n@media (min-width: 1224px) {\n.sidebar[data-v-52d1ee62] {\n    display: initial;\n    background-color: white;\n    height: 56rem;\n    border-right: 1px solid #c8c8c8;\n    padding-left: 0px;\n}\n.compose[data-v-52d1ee62] {\n    margin: 0;\n    margin-top: 20px;\n}\n.mobile-menu[data-v-52d1ee62] {\n    display: none;\n}\n#composeModal > .modal-dialog > .modal-content[data-v-52d1ee62] {\n    width: 50rem;\n}\n#readModal > .modal-dialog > .modal-content[data-v-52d1ee62] {\n    width: 50rem;\n}\n.truncate[data-v-52d1ee62] {\n    max-width: 20rem;\n}\n}\n@media (min-width: 1400px) {\n.compose[data-v-52d1ee62] {\n    height: 40px;\n    width: 130px;\n}\n}\n", ""]);
+exports.push([module.i, "\nul[data-v-52d1ee62] {\n  padding-left: 0;\n  list-style: none;\n  cursor: pointer;\n  margin-top: 20px;\n}\nli[data-v-52d1ee62] {\n  height: 40px;\n  margin-left: -10px;\n  margin-right: -10px;\n  padding: 10px 12px;\n}\n.main[data-v-52d1ee62] {\n  height: 60rem;\n  overflow-y: scroll;\n}\n.heading > h2[data-v-52d1ee62] {\n  margin-top: 6px;\n}\n.row[data-v-52d1ee62] {\n  margin: 0px;\n}\n.hidden[data-v-52d1ee62] {\n  visibility: hidden;\n}\n.emailList[data-v-52d1ee62] {\n  margin-top: 20px;\n}\n.truncate[data-v-52d1ee62] {\n  max-width: 115px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.compose[data-v-52d1ee62] {\n  margin: 20px;\n}\n#toBody[data-v-52d1ee62] {\n  height: 30rem;\n  resize: none;\n}\n#toSubject[data-v-52d1ee62] {\n  width: 80%;\n  border-radius: 4px;\n  border-width: 1px;\n  margin-left: 14px;\n}\n.email-body[data-v-52d1ee62] {\n  margin: 30px 0 40px;\n}\n#composeModal > .modal-dialog > .modal-content[data-v-52d1ee62] {\n  height: 44rem;\n  width: 35rem;\n}\n#readModal > .modal-dialog > .modal-content[data-v-52d1ee62] {\n  width: 35rem;\n}\n.modal-body[data-v-52d1ee62] {\n  height: 80%;\n}\n.modal-title[data-v-52d1ee62] {\n  margin: -9px 0;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n}\n.keyline[data-v-52d1ee62] {\n  border-left: solid 4px #636b6f;\n  padding-left: 20px;\n}\n.keyline-sent[data-v-52d1ee62] {\n  border-color: white;\n}\n.keyline-inbox[data-v-52d1ee62] {\n  border-color: #636b6f;\n}\n.sidebar[data-v-52d1ee62] {\n  display: none;\n}\n.toggle[data-v-52d1ee62] {\n  margin: 20px;\n  cursor: pointer;\n}\n.flex-header[data-v-52d1ee62] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n.mobile-menu[data-v-52d1ee62] {\n  font-size: 26px;\n  color: white;\n}\n.close[data-v-52d1ee62] {\n  color: #fff;\n  line-height: 0;\n  margin-top: -15px;\n}\n\n/* The side navigation menu */\n.sidenav[data-v-52d1ee62] {\n  height: 100%;\n  /* 100% Full-height */\n  width: 0;\n  /* 0 width - change this with JavaScript */\n  height: 60rem;\n  position: absolute;\n  /* Stay in place */\n  z-index: 1;\n  /* Stay on top */\n  right: 0;\n  background-color: #4a4a4a;\n  overflow-x: hidden;\n  /* Disable horizontal scroll */\n  padding-top: 60px;\n  /* Place content 60px from the top */\n  -webkit-transition: 0.5s;\n  transition: 0.5s;\n  /* 0.5 second transition effect to slide in the sidenav */\n}\n\n/* The navigation menu links */\n.sidenav a[data-v-52d1ee62] {\n  padding: 8px 8px 8px 32px;\n  text-decoration: none;\n  font-size: 25px;\n  color: #818181;\n  display: block;\n  -webkit-transition: 0.3s;\n  transition: 0.3s;\n}\n\n/* When you mouse over the navigation links, change their color */\n.sidenav a[data-v-52d1ee62]:hover {\n  color: #f1f1f1;\n}\n\n/* Position and style the close button (top right corner) */\n.sidenav .closebtn[data-v-52d1ee62] {\n  position: absolute;\n  top: 0;\n  right: 25px;\n  font-size: 36px;\n  margin-left: 50px;\n}\n\n/* Style page content - use this if you want to push the page content to the right when you open the side navigation */\n.content[data-v-52d1ee62] {\n  -webkit-transition: margin-left .5s;\n  transition: margin-left .5s;\n  padding: 20px;\n}\n\n/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */\n@media screen and (max-height: 450px) {\n.sidenav[data-v-52d1ee62] {\n    padding-top: 15px;\n}\n.sidenav a[data-v-52d1ee62] {\n    font-size: 18px;\n}\n}\n@media (min-width: 1024px) {\n.truncate[data-v-52d1ee62] {\n    max-width: 23rem;\n}\n}\n@media (min-width: 1224px) {\n.sidebar[data-v-52d1ee62] {\n    display: initial;\n    background-color: white;\n    height: 56rem;\n    border-right: 1px solid #c8c8c8;\n    padding-left: 0px;\n}\n.compose[data-v-52d1ee62] {\n    margin: 0;\n    margin-top: 20px;\n}\n.mobile-menu[data-v-52d1ee62] {\n    display: none;\n}\n#composeModal > .modal-dialog > .modal-content[data-v-52d1ee62] {\n    width: 50rem;\n}\n#readModal > .modal-dialog > .modal-content[data-v-52d1ee62] {\n    width: 50rem;\n}\n.truncate[data-v-52d1ee62] {\n    max-width: 20rem;\n}\n}\n@media (min-width: 1400px) {\n.compose[data-v-52d1ee62] {\n    height: 40px;\n    width: 130px;\n}\n}\n", ""]);
 
 // exports
 
@@ -67445,7 +67445,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\ntextarea[data-v-57c1bf28] {\n  resize: none;\n  height: 20rem;\n}\ntd[data-v-57c1bf28], th[data-v-57c1bf28] {\n  padding: 10px;\n}\ntr[data-v-57c1bf28] {\n  cursor: pointer;\n}\n.row[data-v-57c1bf28] {\n  margin: 0px;\n}\n.truncate[data-v-57c1bf28] {\n  max-width: 115px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.email-body[data-v-57c1bf28] {\n  margin: 30px 0 40px;\n}\n.reply[data-v-57c1bf28] {\n  font-size: 25px;\n}\n.reply-contact[data-v-57c1bf28] {\n  border: solid 1px;\n  border-bottom: 0;\n  margin-bottom: 0;\n}\n.reply-contact-name[data-v-57c1bf28] {\n  padding-top: 9px;\n  padding-left: 30px;\n  position: absolute;\n  height: 20px;\n}\n.greyText[data-v-57c1bf28] {\n  color: grey;\n}\n.read[data-v-57c1bf28] {\n  background-color: #f5f8fa;\n}\n.unread[data-v-57c1bf28] {\n  font-weight: bold;\n}\n#readModal > .modal-dialog > .modal-content[data-v-57c1bf28] {\n  width: 35rem;\n}\n.modal-body[data-v-57c1bf28] {\n  height: 80%;\n}\n.modal-title[data-v-57c1bf28] {\n  margin: -9px 0;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n}\n.flex-header[data-v-57c1bf28] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n.close[data-v-57c1bf28] {\n  color: #fff;\n  line-height: 0;\n  margin-top: -15px;\n}\n@media (min-width: 1024px) {\n.truncate[data-v-57c1bf28] {\n    max-width: 23rem;\n}\n}\n@media (min-width: 1224px) {\n#readModal > .modal-dialog > .modal-content[data-v-57c1bf28] {\n    width: 50rem;\n}\n.truncate[data-v-57c1bf28] {\n    max-width: 35rem;\n}\n}\n", ""]);
+exports.push([module.i, "\ntextarea[data-v-57c1bf28] {\n  resize: none;\n  height: 20rem;\n}\ntd[data-v-57c1bf28], th[data-v-57c1bf28] {\n  padding: 10px;\n}\ntr[data-v-57c1bf28] {\n  cursor: pointer;\n}\n.row[data-v-57c1bf28] {\n  margin: 0px;\n}\n.truncate[data-v-57c1bf28] {\n  max-width: 115px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.email-body[data-v-57c1bf28] {\n  margin: 30px 0 40px;\n}\n.reply[data-v-57c1bf28] {\n  font-size: 25px;\n}\n.reply-contact[data-v-57c1bf28] {\n  border: solid 1px;\n  border-bottom: 0;\n  margin-bottom: 0;\n}\n.reply-contact-name[data-v-57c1bf28] {\n  padding-top: 9px;\n  padding-left: 30px;\n  position: absolute;\n  height: 20px;\n}\n.greyText[data-v-57c1bf28] {\n  color: grey;\n  font-weight: 300;\n}\n.read[data-v-57c1bf28] {\n  background-color: #f5f8fa;\n}\n.unread[data-v-57c1bf28] {\n  font-weight: bold;\n}\n#readModal > .modal-dialog > .modal-content[data-v-57c1bf28] {\n  width: 35rem;\n}\n.modal-body[data-v-57c1bf28] {\n  height: 80%;\n}\n.modal-title[data-v-57c1bf28] {\n  margin: -9px 0;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n}\n.flex-header[data-v-57c1bf28] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n.close[data-v-57c1bf28] {\n  color: #fff;\n  line-height: 0;\n  margin-top: -15px;\n}\n@media (min-width: 1024px) {\n.truncate[data-v-57c1bf28] {\n    max-width: 23rem;\n}\n}\n@media (min-width: 1224px) {\n#readModal > .modal-dialog > .modal-content[data-v-57c1bf28] {\n    width: 50rem;\n}\n.truncate[data-v-57c1bf28] {\n    max-width: 35rem;\n}\n}\n", ""]);
 
 // exports
 
@@ -68337,7 +68337,7 @@ var render = function() {
             attrs: { role: "banner" }
           },
           [
-            _c("h1", [_vm._v("Messages")]),
+            _c("h2", [_vm._v("Messages")]),
             _vm._v(" "),
             _c("div", { staticClass: "sidenav", attrs: { id: "mySidenav" } }, [
               _c(
@@ -88879,7 +88879,7 @@ exports = module.exports = __webpack_require__(3)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Lato:400,700);", ""]);
 
 // module
-exports.push([module.i, "\n*, *:before, *:after {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\nli {\n  list-style: none;\n}\n.pointer {\n  cursor: pointer;\n}\n.list-title {\n  padding-left: 20px;\n}\n.people-list {\n  width: 260px;\n  float: left;\n  color: #4a4a4a;\n  margin-top: 35px;\n}\n.people-list .search {\n    padding: 20px;\n}\n.people-list input {\n    border-radius: 3px;\n    border: none;\n    padding: 14px;\n    color: white;\n    background: #6A6C75;\n    width: 90%;\n    font-size: 14px;\n}\n.people-list .fa-search {\n    position: relative;\n    left: -25px;\n}\n.people-list ul {\n    padding: 20px;\n    height: 770px;\n}\n.people-list ul li {\n      padding-bottom: 20px;\n}\n.people-list img {\n    float: left;\n}\n.people-list .about {\n    float: left;\n    margin-top: 8px;\n}\n.people-list .about {\n    padding-left: 8px;\n}\n.people-list .status {\n    color: #92959E;\n}\n.chat {\n  width: 650px;\n  float: left;\n  background: #fff;\n  border-top-right-radius: 5px;\n  border-bottom-right-radius: 5px;\n  color: #434651;\n}\n.chat .chat-header {\n    padding: 20px;\n    border-bottom: 2px solid white;\n}\n.chat .chat-header img {\n      float: left;\n      border-radius: 50%;\n      border: 2px solid #596d6f;\n}\n.chat .chat-header .chat-about {\n      float: left;\n      padding-left: 10px;\n      margin-top: 6px;\n}\n.chat .chat-header .chat-with {\n      font-weight: bold;\n      font-size: 16px;\n}\n.chat .chat-header .chat-num-messages {\n      color: #92959E;\n}\n.chat .chat-header .fa-star {\n      float: right;\n      color: #D8DADF;\n      font-size: 20px;\n      margin-top: 12px;\n}\n.chat #chat-history {\n    padding: 0px 20px;\n    border-bottom: 2px solid white;\n    overflow-y: scroll;\n    height: 675px;\n}\n.chat #chat-history .message-data {\n      margin-bottom: 10px;\n}\n.chat #chat-history .message-data-time {\n      color: #a8aab1;\n      padding-left: 6px;\n}\n.chat #chat-history .message {\n      color: white;\n      padding: 15px 20px;\n      line-height: 26px;\n      font-size: 16px;\n      border-radius: 1px;\n      margin-bottom: 15px;\n      width: 90%;\n      position: relative;\n}\n.chat #chat-history .message:after {\n        bottom: 100%;\n        left: 7%;\n        border: solid transparent;\n        content: \" \";\n        height: 0;\n        width: 0;\n        position: absolute;\n        pointer-events: none;\n        border-bottom-color: #596d6f;\n        border-width: 10px;\n        margin-left: -10px;\n}\n.chat #chat-history .my-message {\n      background: #596d6f;\n}\n.chat #chat-history .other-message {\n      background: #8baaad;\n}\n.chat #chat-history .other-message:after {\n        border-bottom-color: #8baaad;\n        left: 93%;\n}\n.chat .chat-message {\n    padding: 20px;\n}\n.chat .chat-message textarea {\n      width: 100%;\n      border: 1px solid #BFBFBF;\n      padding: 10px 20px;\n      font: 14px/22px \"Lato\", Arial, sans-serif;\n      margin-bottom: 10px;\n      border-radius: 6px;\n      resize: none;\n}\n.chat .chat-message .fa-file-o, .chat .chat-message .fa-file-image-o {\n      font-size: 16px;\n      color: gray;\n      cursor: pointer;\n}\n.chat .chat-message button {\n      float: right;\n      color: #8baaad;\n      font-size: 16px;\n      text-transform: uppercase;\n      border: none;\n      cursor: pointer;\n      font-weight: bold;\n      background: #F2F5F8;\n}\n.chat .chat-message button:hover {\n        color: #769b9e;\n}\n.online, .offline, .me {\n  margin-right: 3px;\n  font-size: 10px;\n}\n.online {\n  color: #596d6f;\n}\n.offline {\n  color: #E38968;\n}\n.me {\n  color: #8baaad;\n}\n.align-left {\n  text-align: left;\n}\n.align-right {\n  text-align: right;\n}\n.float-right {\n  float: right;\n}\n.clearfix:after {\n  visibility: hidden;\n  display: block;\n  font-size: 0;\n  content: \" \";\n  clear: both;\n  height: 0;\n}\n", ""]);
+exports.push([module.i, "\n*, *:before, *:after {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\nli {\n  list-style: none;\n}\n.pointer {\n  cursor: pointer;\n}\n.list-title {\n  padding-left: 20px;\n}\n.people-list {\n  width: 260px;\n  float: left;\n  color: #4a4a4a;\n  margin-top: 35px;\n}\n.people-list .search {\n    padding: 20px;\n}\n.people-list input {\n    border-radius: 3px;\n    border: none;\n    padding: 14px;\n    color: white;\n    background: #6A6C75;\n    width: 90%;\n    font-size: 14px;\n}\n.people-list .fa-search {\n    position: relative;\n    left: -25px;\n}\n.people-list ul {\n    padding: 20px;\n    height: 770px;\n}\n.people-list ul li {\n      padding-bottom: 20px;\n}\n.people-list img {\n    float: left;\n}\n.people-list .about {\n    float: left;\n    margin-top: 8px;\n}\n.people-list .about {\n    padding-left: 8px;\n}\n.people-list .status {\n    color: #92959E;\n}\n.chat {\n  width: 650px;\n  float: left;\n  background: #fff;\n  border-top-right-radius: 5px;\n  border-bottom-right-radius: 5px;\n  color: #434651;\n}\n.chat .chat-header {\n    padding: 20px;\n    border-bottom: 1px solid #f1f1f1;\n}\n.chat .chat-header img {\n      float: left;\n      border-radius: 50%;\n      border: 2px solid #596d6f;\n}\n.chat .chat-header .chat-about {\n      float: left;\n      padding-left: 10px;\n      margin-top: 6px;\n}\n.chat .chat-header .chat-with {\n      font-weight: bold;\n      font-size: 16px;\n}\n.chat .chat-header .chat-num-messages {\n      color: #92959E;\n}\n.chat .chat-header .fa-star {\n      float: right;\n      color: #D8DADF;\n      font-size: 20px;\n      margin-top: 12px;\n}\n.chat #chat-history {\n    padding: 0px 20px;\n    border-bottom: 2px solid white;\n    overflow-y: scroll;\n    height: 675px;\n}\n.chat #chat-history .message-data {\n      margin-bottom: 10px;\n}\n.chat #chat-history .message-data-time {\n      color: #a8aab1;\n      padding-left: 6px;\n}\n.chat #chat-history .message {\n      color: white;\n      padding: 15px 20px;\n      line-height: 26px;\n      font-size: 14px;\n      font-weight: 300;\n      letter-spacing: 0.5px;\n      border-radius: 1px;\n      margin-bottom: 15px;\n      width: 90%;\n      position: relative;\n}\n.chat #chat-history .message:after {\n        bottom: 100%;\n        left: 7%;\n        border: solid transparent;\n        content: \" \";\n        height: 0;\n        width: 0;\n        position: absolute;\n        pointer-events: none;\n        border-bottom-color: #596d6f;\n        border-width: 10px;\n        margin-left: -10px;\n}\n.chat #chat-history .my-message {\n      background: #596d6f;\n}\n.chat #chat-history .other-message {\n      background: #8baaad;\n}\n.chat #chat-history .other-message:after {\n        border-bottom-color: #8baaad;\n        left: 93%;\n}\n.chat .chat-message {\n    padding: 20px;\n    border-top: 1px solid #f1f1f1;\n}\n.chat .chat-message textarea {\n      width: 100%;\n      border: 1px solid #BFBFBF;\n      padding: 10px 20px;\n      font: 14px/22px \"Nunito\", Arial, sans-serif;\n      margin-bottom: 10px;\n      border-radius: 6px;\n      resize: none;\n}\n.chat .chat-message .fa-file-o, .chat .chat-message .fa-file-image-o {\n      font-size: 16px;\n      color: gray;\n      cursor: pointer;\n}\n.chat .chat-message button {\n      float: right;\n      color: #8baaad;\n      font-size: 16px;\n      text-transform: uppercase;\n      border: none;\n      cursor: pointer;\n      font-weight: bold;\n      background: #F2F5F8;\n}\n.chat .chat-message button:hover {\n        color: #769b9e;\n}\n.online, .offline, .me {\n  margin-right: 3px;\n  font-size: 10px;\n}\n.online {\n  color: #596d6f;\n}\n.offline {\n  color: #E38968;\n}\n.me {\n  color: #8baaad;\n}\n.align-left {\n  text-align: left;\n}\n.align-right {\n  text-align: right;\n}\n.float-right {\n  float: right;\n}\n.clearfix:after {\n  visibility: hidden;\n  display: block;\n  font-size: 0;\n  content: \" \";\n  clear: both;\n  height: 0;\n}\n", ""]);
 
 // exports
 
@@ -88902,6 +88902,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
 //
 //
 //
@@ -89029,7 +89030,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             current_channel_id: 1,
             sendMessage: "",
             client_messages: {},
-            userName: ''
+            userName: '',
+            defaultName: 'Kimberly Smitherton'
         };
     },
     methods: {
@@ -89077,20 +89079,51 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                         if (response.result.fulfillment.messages) {
                             //let payload = response.result.fulfillment.messages.filter(msg => msg.type === 4);
                             var payload = response.result.fulfillment.messages;
+                            console.log(payload);
+
                             if (payload.length) {
 
                                 payload.forEach(function (msg) {
 
-                                    console.log(msg);
-                                    var data = {
-                                        day: _this3.$store.getters.CURRENT_DAY,
-                                        channel_id: _this3.current_channel_id,
-                                        message: msg.speech,
-                                        type: 1
-                                    };
+                                    if (msg.type == 4) {
+                                        var custom = msg.payload.msgs;
+                                        console.log(custom);
 
-                                    axios.post('/chat', data).then(function (response) {/* console.log(response) */});
-                                    _this3.client_messages[_this3.current_channel_id].push(data);
+                                        custom.forEach(function (single) {
+                                            console.log(single);
+                                            var data = {
+                                                day: _this3.$store.getters.CURRENT_DAY,
+                                                channel_id: _this3.current_channel_id,
+                                                message: single.msg,
+                                                type: 1,
+                                                from: single.name
+                                            };
+
+                                            axios.post('/chat', data).then(function (response) {/* console.log(response) */});
+                                            _this3.client_messages[_this3.current_channel_id].push(data);
+                                        });
+                                    } else {
+                                        console.log(msg);
+                                        if (msg.speech) {
+                                            var saved_name = '';
+                                            if (_this3.channels[_this3.current_client_index].character_id != 0) {
+                                                saved_name = _this3.channels[_this3.current_client_index].name;
+                                            } else {
+                                                saved_name = _this3.defaultName;
+                                            }
+                                            var data = {
+                                                day: _this3.$store.getters.CURRENT_DAY,
+                                                channel_id: _this3.current_channel_id,
+                                                message: msg.speech,
+                                                type: 1,
+                                                from: saved_name
+                                            };
+
+                                            axios.post('/chat', data).then(function (response) {/* console.log(response) */
+                                            });
+                                            _this3.client_messages[_this3.current_channel_id].push(data);
+                                        }
+                                    }
                                 });
                             }
                         }
@@ -89107,6 +89140,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         },
         changeChannel: function changeChannel(channel_index) {
             this.scrollChat();
+            console.log(channel_index);
             this.current_client_index = channel_index;
             this.current_channel_id = this.channels[this.current_client_index].channel_id;
         }
@@ -89404,6 +89438,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -89412,7 +89447,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.lastChatMessage();
     },
 
-    props: ['name', 'message', 'isLast'],
+    props: ['name', 'message', 'isLast', 'defaultName'],
     methods: {
         lastChatMessage: function lastChatMessage() {
             if (this.isLast) {
@@ -89432,10 +89467,17 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("li", [
     _c("div", { staticClass: "message-data" }, [
-      _c("span", { staticClass: "message-data-name" }, [
-        _c("i", { staticClass: "fa fa-circle online" }),
-        _vm._v(" " + _vm._s(_vm.name))
-      ]),
+      _vm.message.from
+        ? _c("span", { staticClass: "message-data-name" }, [
+            _c("i", { staticClass: "fa fa-circle online" }),
+            _vm._v(" " + _vm._s(_vm.message.from))
+          ])
+        : _vm.name == "Group Chat"
+          ? _c("span", { staticClass: "message-data-name" }, [
+              _c("i", { staticClass: "fa fa-circle online" }),
+              _vm._v(" " + _vm._s(_vm.defaultName) + " ")
+            ])
+          : _vm._e(),
       _vm._v(" "),
       _c("span", { staticClass: "message-data-time" }, [
         _vm._v(_vm._s(_vm.message.time))
@@ -89543,7 +89585,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\nimg[data-v-34d85b4a] {\n  border-radius: 50%;\n  border: 2px solid #94C2ED;\n}\n", ""]);
+exports.push([module.i, "\nimg[data-v-34d85b4a] {\n  margin-top: 7px;\n  border-radius: 50%;\n  border: 2px solid #94C2ED;\n}\n.group[data-v-34d85b4a] {\n  background-color: white;\n}\n", ""]);
 
 // exports
 
@@ -89554,6 +89596,14 @@ exports.push([module.i, "\nimg[data-v-34d85b4a] {\n  border-radius: 50%;\n  bord
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -89585,16 +89635,36 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("li", { staticClass: "clearfix" }, [
-    _c("img", { attrs: { src: _vm.channel.img_small, alt: "avatar" } }),
-    _vm._v(" "),
-    _c("div", { staticClass: "about" }, [
-      _c("div", { staticClass: "name" }, [_vm._v(_vm._s(_vm.channel.name))]),
-      _vm._v(" "),
-      _c("div", { staticClass: "status" }, [
-        _c("i", { staticClass: "fa fa-circle online" }),
-        _vm._v(" " + _vm._s(_vm.channel.status) + "\n        ")
-      ])
-    ])
+    _vm.channel.img_small
+      ? _c("div", [
+          _c("img", { attrs: { src: _vm.channel.img_small, alt: "avatar" } }),
+          _vm._v(" "),
+          _c("div", { staticClass: "about" }, [
+            _c("div", { staticClass: "name" }, [
+              _vm._v(_vm._s(_vm.channel.name))
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "status" }, [
+              _vm._v(
+                "\n                " +
+                  _vm._s(_vm.channel.role) +
+                  "\n            "
+              )
+            ])
+          ])
+        ])
+      : _c("div", [
+          _c("img", {
+            staticClass: "group",
+            attrs: { src: "img/characters/group.png", alt: "avatar" }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "about" }, [
+            _c("div", { staticClass: "name" }, [
+              _vm._v(_vm._s(_vm.channel.name))
+            ])
+          ])
+        ])
   ])
 }
 var staticRenderFns = []
@@ -89639,16 +89709,21 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "chat" }, [
       _c("div", { staticClass: "chat-header clearfix" }, [
-        _c("img", {
-          staticClass: "selected-character",
-          attrs: {
-            src: _vm.channels[_vm.current_client_index].img_small,
-            alt: "avatar"
-          }
-        }),
+        _vm.channels[_vm.current_client_index].character_id != 0
+          ? _c("img", {
+              staticClass: "selected-character",
+              attrs: {
+                src: _vm.channels[_vm.current_client_index].img_small,
+                alt: "avatar"
+              }
+            })
+          : _c("img", {
+              staticClass: "selected-character",
+              attrs: { src: "img/characters/group.png", alt: "avatar" }
+            }),
         _vm._v(" "),
         _c("div", { staticClass: "chat-about" }, [
-          _c("div", { staticClass: "chat-with" }, [
+          _c("h5", { staticClass: "chat-with" }, [
             _vm._v(_vm._s(_vm.channels[_vm.current_client_index].name))
           ])
         ]),
@@ -89687,6 +89762,7 @@ var render = function() {
                       attrs: {
                         name: _vm.channels[_vm.current_client_index].name,
                         message: message,
+                        defaultName: _vm.defaultName,
                         isLast:
                           key ===
                           _vm.client_messages[_vm.current_channel_id].length - 1
@@ -100481,7 +100557,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.nav-link[data-v-ecda4c24] {\n    text-transform: uppercase;\n    font-family: \"Lato\", sans-serif;\n}\n.nav-item[data-v-ecda4c24] {\n    font-weight: 200;\n}\n.nav-icon[data-v-ecda4c24] {\n    position: relative;\n    top: -2px;\n    padding-right: 2px;\n}\n.badge-danger[data-v-ecda4c24] {\n    background-color: #D22C37;\n}\n", ""]);
+exports.push([module.i, "\n.nav-link[data-v-ecda4c24] {\n    text-transform: uppercase;\n    font-family: \"Lato\", sans-serif;\n}\n.nav-item[data-v-ecda4c24] {\n    font-weight: 200;\n    font-size: 11.5pt;\n}\n.nav-icon[data-v-ecda4c24] {\n    position: relative;\n    top: -2px;\n    padding-right: 2px;\n}\n.badge-danger[data-v-ecda4c24] {\n    background-color: #D22C37;\n}\n", ""]);
 
 // exports
 

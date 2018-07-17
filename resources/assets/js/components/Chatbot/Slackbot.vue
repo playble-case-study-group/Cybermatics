@@ -18,10 +18,10 @@
 
         <div class="chat">
             <div class="chat-header clearfix">
-                <img class="selected-character" :src="channels[current_client_index].img_small" alt="avatar"/>
-
+                <img v-if="channels[current_client_index].character_id != 0" class="selected-character" :src="channels[current_client_index].img_small" alt="avatar"/>
+                <img v-else class="selected-character" src="img/characters/group.png" alt="avatar"/>
                 <div class="chat-about">
-                    <div class="chat-with">{{ channels[current_client_index].name }}</div>
+                    <h5 class="chat-with">{{ channels[current_client_index].name }}</h5>
                 </div>
                 <i class="fa fa-star"></i>
             </div> <!-- end chat-header -->
@@ -38,6 +38,7 @@
                     <slack-receive v-if="message.type"
                                    :name="channels[current_client_index].name"
                                    :message="message"
+                                   :defaultName = "defaultName"
                                    :isLast="key === (client_messages[current_channel_id].length - 1)? true: false"
                                    v-on:last_msg="scrollChat"
                                    :key="key">
@@ -124,7 +125,8 @@
                 current_channel_id: 1,
                 sendMessage: "",
                 client_messages: {},
-                userName: ''
+                userName: '',
+                defaultName: 'Kimberly Smitherton'
             }
         },
         methods: {
@@ -169,20 +171,54 @@
                             if(response.result.fulfillment.messages) {
                                 //let payload = response.result.fulfillment.messages.filter(msg => msg.type === 4);
                                 let payload = response.result.fulfillment.messages;
+                                console.log(payload);
+
                                 if (payload.length) {
 
                                     payload.forEach(msg => {
 
-                                        console.log(msg);
-                                        let data = {
-                                            day: this.$store.getters.CURRENT_DAY,
-                                            channel_id: this.current_channel_id,
-                                            message: msg.speech,
-                                            type: 1
-                                        };
+                                        if(msg.type == 4) {
+                                            let custom = msg.payload.msgs;
+                                            console.log(custom);
 
-                                        axios.post('/chat', data).then( response => { /* console.log(response) */ });
-                                        this.client_messages[this.current_channel_id].push(data)
+                                            custom.forEach(single => {
+                                                console.log(single);
+                                                let data = {
+                                                    day: this.$store.getters.CURRENT_DAY,
+                                                    channel_id: this.current_channel_id,
+                                                    message: single.msg,
+                                                    type: 1,
+                                                    from: single.name
+                                                };
+
+                                                axios.post('/chat', data).then( response => { /* console.log(response) */ });
+                                                this.client_messages[this.current_channel_id].push(data)
+                                            })
+                                        } else {
+                                            console.log(msg);
+                                            if(msg.speech) {
+                                                let saved_name = '';
+                                                if(this.channels[this.current_client_index].character_id != 0) {
+                                                    saved_name = this.channels[this.current_client_index].name
+                                                }
+                                                else {
+                                                    saved_name = this.defaultName;
+                                                }
+                                                let data = {
+                                                    day: this.$store.getters.CURRENT_DAY,
+                                                    channel_id: this.current_channel_id,
+                                                    message: msg.speech,
+                                                    type: 1,
+                                                    from: saved_name
+                                                };
+
+                                                axios.post('/chat', data).then(response => { /* console.log(response) */
+                                                });
+                                                this.client_messages[this.current_channel_id].push(data)
+                                            }
+
+                                        }
+
                                     });
 
                                 }
@@ -203,6 +239,7 @@
             },
             changeChannel: function (channel_index) {
                 this.scrollChat();
+                console.log(channel_index);
                 this.current_client_index = channel_index;
                 this.current_channel_id = this.channels[this.current_client_index].channel_id;
             }
@@ -299,7 +336,7 @@
 
         .chat-header {
             padding: 20px;
-            border-bottom: 2px solid white;
+            border-bottom: 1px solid #f1f1f1;
 
             img {
                 float: left;
@@ -349,7 +386,9 @@
                 color: white;
                 padding: 15px 20px;
                 line-height: 26px;
-                font-size: 16px;
+                font-size: 14px;
+                font-weight: 300;
+                letter-spacing: 0.5px;
                 border-radius: 1px;
                 margin-bottom: 15px;
                 width: 90%;
@@ -387,12 +426,13 @@
 
         .chat-message {
             padding: 20px;
+            border-top: 1px solid #f1f1f1;
 
             textarea {
                 width: 100%;
                 border: 1px solid #BFBFBF;
                 padding: 10px 20px;
-                font: 14px/22px "Lato", Arial, sans-serif;
+                font: 14px/22px "Nunito", Arial, sans-serif;
                 margin-bottom: 10px;
                 border-radius: 6px;
                 resize: none;

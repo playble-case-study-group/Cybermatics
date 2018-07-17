@@ -43,6 +43,7 @@
     }
     .nav-item {
         font-weight: 200;
+        font-size: 11.5pt;
     }
     .nav-icon {
         position: relative;
