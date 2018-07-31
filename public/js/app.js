@@ -33572,7 +33572,7 @@ function foundMatch(query, value, isListFilter) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(105);
-module.exports = __webpack_require__(554);
+module.exports = __webpack_require__(551);
 
 
 /***/ }),
@@ -33581,7 +33581,7 @@ module.exports = __webpack_require__(554);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vuex_store__ = __webpack_require__(553);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vuex_store__ = __webpack_require__(550);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -33615,7 +33615,7 @@ Vue.component('chatbot', __webpack_require__(332));
 Vue.component('slackbot', __webpack_require__(340));
 Vue.component('classes', __webpack_require__(359));
 Vue.component('editor', __webpack_require__(540));
-Vue.component('navigation', __webpack_require__(548));
+Vue.component('navigation', __webpack_require__(545));
 Vue.component('v-select', __webpack_require__(29));
 
 
@@ -90829,22 +90829,19 @@ if (false) {
 }
 
 /***/ }),
-/* 545 */,
-/* 546 */,
-/* 547 */,
-/* 548 */
+/* 545 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(549)
+  __webpack_require__(546)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(551)
+var __vue_script__ = __webpack_require__(548)
 /* template */
-var __vue_template__ = __webpack_require__(552)
+var __vue_template__ = __webpack_require__(549)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -90883,13 +90880,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 549 */
+/* 546 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(550);
+var content = __webpack_require__(547);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -90909,7 +90906,7 @@ if(false) {
 }
 
 /***/ }),
-/* 550 */
+/* 547 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -90923,7 +90920,7 @@ exports.push([module.i, "\n.nav-link[data-v-ecda4c24] {\n    text-transform: upp
 
 
 /***/ }),
-/* 551 */
+/* 548 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -90968,7 +90965,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 552 */
+/* 549 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -91018,7 +91015,7 @@ if (false) {
 }
 
 /***/ }),
-/* 553 */
+/* 550 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -91227,7 +91224,7 @@ var actions = {
 }));
 
 /***/ }),
-/* 554 */
+/* 551 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
