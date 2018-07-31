@@ -12,6 +12,7 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
+    .js('resources/assets/js/hosts/index.js', 'public/js/test')
    .sass('resources/assets/sass/app.scss', 'public/css')
-   .browserSync('http://cybermatics.localhost');
+   .browserSync('http://localhost:8000');
 

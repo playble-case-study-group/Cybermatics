@@ -21,7 +21,12 @@ Auth::routes();
 // Home
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/user', 'HomeController@user');
+Route::get('/terminaltest', function () {
+    return view('terminal-test');
+});
+Route::get('terminalhosts', function () {
 
+});
 
 Route::group(['middleware'=>['auth', 'admin']], function() {
     //Library

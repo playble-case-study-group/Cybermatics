@@ -6,7 +6,7 @@
  */
 
 require('./bootstrap');
-
+require('./hosts');
 window.Vue = require('vue');
 
 
@@ -32,6 +32,10 @@ Vue.component('classes', require('./components/Classes/Classes.vue'));
 Vue.component('editor', require('./components/Library/articleEditor.vue'));
 Vue.component('navigation', require('./components/NavigationLink/navigation.vue'));
 Vue.component('v-select', require('vue-select'));
+
+Vue.config.ignoredElements = [
+    'cm-terminal'
+];
 
 import store from './vuex/store';
 import { mapActions, mapGetters } from 'vuex';
